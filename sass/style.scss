@@ -1,0 +1,908 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Roboto+Condensed:wght@400;500;600;700&family=Roboto:wght@400;500;700&family=Sen&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Inter' , sans-serif;
+    transition: .8s;
+}
+
+.hidden{
+    display: none;
+}
+
+img{
+    width: 40px;
+}
+
+
+body{
+    display: flex;
+    transition: .8s;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Inter';
+    .application{
+        transform: scale(1.6);
+    }
+}
+
+
+.close-screen{
+    background: rgb(20, 19, 19) !important;
+    .app-container , .nav{
+        display: none;
+    }
+    // opacity: 0;
+}
+.iphone-frame{
+    height: 500px;
+    position: relative;
+    background: #000;
+    // overflow: hidden;
+    width: 260px;
+    border: 5px solid #666;
+    border-radius: 30px;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 0px 0px #333;
+    
+    .line{
+        position: absolute;
+        right: 38%;
+        top: 0px;
+        height: 5px;
+        width: 60px;
+        z-index: 10;
+        border-radius: 10px;
+        border: 0.03em solid rgb(51,51,51,0.479);
+        box-shadow: inset 0px 0px 1px 1px rgb(51,51,51,0.71);
+    }   
+    .inner{         overflow: hidden;
+                    background: url(../images/phone-background-3.jpg);
+                    background-size: cover;
+                    background-position: center;
+                    position: absolute;
+                    inset: 0px;
+                    border-radius: 30px;
+                    border: 10px solid #000;
+    }
+    .button{
+        position: absolute;
+        bottom: 5px;
+        height: 2px;
+        cursor: pointer;
+        border-radius: 20px;
+        width: 90px;
+        left: 50%;
+        z-index: 102;
+        background-color: #fff;
+        transform: translateX(-50%);
+    }
+    
+    .btn{
+                    position: absolute;
+                    cursor: pointer;
+                    top: 110px;
+                    left: -7px;
+                    width: 3px;
+                    height: 26px;
+                    border-top-left-radius: 4px;
+                    border-bottom-left-radius: 4px;
+                    background: radial-gradient(#ccd , #666 , #222);
+                    z-index: 10;
+                }
+                .btn2{
+                    top: 160px;
+                    width: 3px;
+                    height: 40px;
+                }
+        
+                .btn3{
+                    top: 210px;
+                    width: 3px;
+                    height: 40px;
+                }
+                .rightSideBtn{
+                    cursor: pointer;
+                    position: absolute;
+                    top: 170px;
+                    right: -7px;
+                    width: 3px;
+                    height: 70px;
+                    border-top-right-radius: 4px;
+                    border-bottom-right-radius: 4px;
+                    background: radial-gradient(#ccd , #666 , #222);
+                    z-index: 10;
+    
+                }
+                         
+    .norch{
+        position: absolute;
+        top: 5px;
+        z-index: 100;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 22px;
+        width: 80px;
+        background-color: #000;
+        border-radius: 50px;
+        // border-bottom-right-radius: 10px;
+        // border-bottom-left-radius: 10px;
+        
+        .rounded{
+            position: relative;
+            ::before{
+                content: '';
+                position: absolute;
+                background-color: #e2b64f;
+                top: 10px;
+                z-index: 1;
+                height: 20px;
+                width: 20px;
+                border-top-right-radius: 4px;
+                box-sizing: border-box;
+                box-shadow: 1px -10px 0px 0px #000;
+            }
+            ::after{
+                content: '';
+                position: absolute;
+                top: 0;
+                height: 20px;
+                width: 20px;
+                border-top-left-radius: 4px;
+                box-sizing: border-box;
+                box-shadow: 0px -10px 0px 0px #000;
+            }
+        }
+        ::before{
+            content: '';
+            position: absolute;
+            right: 7px;
+            top: 5px;
+            height: 12px;
+            width: 12px;
+            border-radius: 10px;
+            border: 0.03em solid rgb(51,51,51,0.479);
+            box-shadow: inset 0px 0px 3px 2px rgb(51,51,51,0.71);
+        }
+        ::after{
+            content: '';
+            position: absolute;
+            right: 10px;
+            top: 9px;
+            height: 1px;
+            width: 1px;
+            border-radius: 50%;
+            background-color: rgb(42, 78, 55);
+            border:3px solid  #070a14;
+        }
+    }
+    .lock-screen{
+        z-index: 1;
+        position: absolute;
+        top: 0;
+        transition: 0.6s;
+        overflow: hidden;
+        left: 0;
+        height: 0%;
+        width: 100%;
+        .time{
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 50px;
+            width: 100%;
+            text-align: center;
+            h1{
+                font-size: 50px;
+                height: 60px;
+                color: rgb(255, 255, 255 , 0.829);
+            }
+            span{
+                font-size: 15px;
+                color: rgb(255, 255, 255 , 0.829);
+            }
+        }
+        .scr-lock-nav{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: fit-content;
+            display: flex;
+            justify-content: space-between;
+            button {
+                margin: 20px;
+                height: 40px;
+                width: 40px;
+                border-radius: 50%;
+                font-size: 15px;
+                color: #fff;
+                border: 0;
+                cursor: pointer;
+                background-color: rgba(0 ,0 ,0 ,0.452);
+                img{
+                    width: 24px;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+            }
+            .r-deg{
+                transform: rotate(-45deg);
+            }
+        }
+        .open-button{
+            position: absolute;
+            bottom: 15px;
+            font-size: 12px;
+            color: rgb(96, 96, 96);
+            font-weight: bold;
+            height: 20px;
+            width: fit-content;
+            padding: 2px 5px;
+            cursor: pointer;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: 1s;
+        }
+    }
+    .lock-screen.active{
+        height: 100% !important;
+        transition: 1s;
+    }
+    .hidden{
+        display: none;
+        transition: 1s;
+    }
+    .application-menu{
+        z-index: 3;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        visibility: visible;
+        transition: 1s;
+        .wrapper{
+            height: 100vh;
+            width: 100%;
+            background-color: #25283d;
+            position: absolute;
+            font-family: 'Inter' , sans-serif;
+            float: left;
+            #clock{
+                width: 200px;
+                height: 200px;
+                background: #25283d;
+                border: 18px solid #1e213a;
+                border-radius: 50%;
+                margin: 100px auto;
+                position: relative;
+                box-shadow: inset 0 5px 25px #00000080,0 5px 25px #00000080,0 5px 30px #00000080,0 5px 35px #00000080 , 0 5px 35px #00000080 , 0 5px 35px #00000080;
+                li{
+                    list-style: none;
+                    position: absolute;
+                }
+                .numbers{
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    padding: 5%;
+                    text-align: center;
+                    span{
+                        display: block;
+                        color: #dbe7fd;
+                        font-size: 18px;
+                        text-shadow: 0 5px 18px #00000026, 0 2px 3px #00000033;
+                    }
+                }
+                .numbers:nth-child(1){
+                    transform: rotate(30deg);
+                    span{
+                        transform: rotate(-30deg);
+                    }
+                }
+                .numbers:nth-child(2){
+                    transform: rotate(60deg);
+                    span{
+                        transform: rotate(-60deg);
+                    }
+                }
+                .numbers:nth-child(3){
+                    transform: rotate(90deg);
+                    span{
+                        transform: rotate(-90deg);
+                    }
+                }
+                .numbers:nth-child(4){
+                    transform: rotate(120deg);
+                    span{
+                        transform: rotate(-120deg);
+                    }
+                }
+                .numbers:nth-child(5){
+                    transform: rotate(150deg);
+                    span{
+                        transform: rotate(-150deg);
+                    }
+                }
+                .numbers:nth-child(6){
+                    transform: rotate(180deg);
+                    span{
+                        transform: rotate(-180deg);
+                    }
+                }
+                .numbers:nth-child(7){
+                    transform: rotate(210deg);
+                    span{
+                        transform: rotate(-210deg);
+                    }
+                }
+                .numbers:nth-child(8){
+                    transform: rotate(240deg);
+                    span{
+                        transform: rotate(-240deg);
+                    }
+                }
+                .numbers:nth-child(9){
+                    transform: rotate(270deg);
+                    span{
+                        transform: rotate(-270deg);
+                    }
+                }
+                .numbers:nth-child(10){
+                    transform: rotate(300deg);
+                    span{
+                        transform: rotate(-300deg);
+                    }
+                }
+                .numbers:nth-child(11){
+                    transform: rotate(330deg);
+                    span{
+                        transform: rotate(-330deg);
+                    }
+                }
+                .numbers:nth-child(12){
+                    transform: rotate(360deg);
+                    span{
+                        transform: rotate(-360deg);
+                    }
+                }
+                #second{
+                    width: 100%;
+                    height: 100%;
+                    animation: sec 60s steps(60, end) infinite;
+                }
+                #second::after{
+                    content: "";
+                    width: 4px;
+                    height: 80px;
+                    border-radius: 2px;
+                    background: #fd2e62;
+                    position: absolute;
+                    left:  49.5%;
+                    top: 65px;
+                    box-shadow: 1px 2px 3px #00000026;
+                }
+                #minute{
+                    width: 100%;
+                    height: 100%;
+                    animation: sec 3600s steps(60, end) infinite;
+                }
+                #minute::after{
+                    content: "";
+                    width: 5px;
+                    height: 75px;
+                    border-radius: 4px 4px 2px 2px;
+                    background: #bed4fd;
+                    position: absolute;
+                    left: 60.5%;
+                    top: 22%;
+                    transform: rotate(-120deg);
+                    box-shadow: -1px 0 5px #00000026;
+                }
+                #hour{
+                    width: 100%;
+                    height: 50px;
+                    transform: rotate(120px);
+                }
+                #hour::after{
+                    content: "";
+                    width: 6px;
+                    height: 60px;
+                    border-radius: 6px 6px 3px 3px;
+                    background: #07f3dfb4;
+                    position: absolute;
+                    left: 49%;
+                    top: 70%;
+                    box-shadow: 1px 0 4px #00000026;
+                }
+                @keyframes sec{
+                    to{
+                        transform: rotate(360deg);
+                    }
+                }
+                
+
+            }
+            .back-menu{
+                color: #fff;
+                bottom: -180px;
+                left: -20px;
+                background-color: #ffffff28;
+                border-radius: 10%;
+                backdrop-filter: blur(4px);
+                width: 40px;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .back-menu:hover{
+                backdrop-filter: blur(4px);
+                background-color: #ffffff7b;
+                box-shadow: 0px 0px 2px 1px rgba(128, 128, 128, 0.228);
+            }
+            #clock::before{
+                content: "";
+                position: absolute;
+                width: 200px;
+                height: 200px;
+                left: -18px;
+                top: -10px;
+                border: 18px solid #ccc;
+                border-radius: 50%;
+                z-index: -2;
+            }
+            #clock::after{
+                content: "";
+                width: 18px;
+                height: 18px;
+                background: #c7d8f8;
+                position: absolute;
+                border-radius: 50%;
+                left: 45%;
+                top: 45%;
+                box-shadow: 0 2px 4px #00000026;
+            }
+        }
+        .alarm-program{
+            height: 100vh;
+            width: 100%;
+            background-image: url(../images/phone-background-2.jpg);
+            background-position: center;
+            background-size: cover;
+            position: absolute;
+            font-family: 'Inter' , sans-serif;
+            float: left;
+            h1{
+                color: #adec43;
+                text-align: center;
+                margin-top: 30px;
+            }
+            .set-alarm-btn{
+                margin-top: 40px;
+                background-color: #bed4fd7e;
+                outline: none;
+                border: none;
+                padding: 10px 20px;
+                margin-left: 17px;
+                border-radius: 10px;
+                width: 200px;
+                font-size: 24px;
+                backdrop-filter: blur(4px);
+                transition: 0.5s;
+                &:hover{
+                    transform: scale(0.9);
+                }
+            }
+            .set-alarm{
+                margin-top: 10px;
+                background-color: #0e5cee7e;
+                color: #fff;
+                outline: none;
+                border: none;
+                padding: 10px 20px;
+                margin-left: 17px;
+                border-radius: 10px;
+                width: 200px;
+                font-size: 24px;
+                backdrop-filter: blur(4px);
+                &:hover{
+                    box-shadow: 2px 2px 10px 1px #2452ed;
+                }
+            }
+            .control-alarm{
+                position: relative;
+                margin-left: 17px;
+                margin-top: 10px;
+                .pause-alarm , .play-alarm{
+                    position: absolute;
+                    left: 0;
+                    bottom: -30px;
+                    width: 200px;
+                    height: 30px;
+                    border: none;
+                    background-color: #a5a0a0c8;
+                    border-radius: 4px;
+                    cursor: pointer;  
+                    img{
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 12px;
+                        height: 12px;
+                    }
+                }
+                .pause-alarm:hover{
+                    background-color: red;
+                    color: white;
+                }
+                .play-alarm:hover{
+                    background-color: green;
+                    color: #fff;
+                }
+            }
+            .back-alarm-menu{
+                position: absolute;
+                bottom: 140px;
+                left: 10px;
+                padding: 12px 15px;
+                color: #fff;
+                font-size: 18px;
+                border: none;
+                cursor: pointer;
+                background-color: #ffffff45;
+                border-radius: 10px;
+                backdrop-filter: blur(4px);                  
+                &:hover{
+                    background-color: #2453ed4a;
+                }
+            }
+        }
+        .tune{
+            position: relative;
+            background-image: url(../images/music-background.jpg);
+            background-position: center;
+            background-size: cover;
+            width: 100%;
+            height: 100vh;
+            padding-left: 5px;
+            padding-right: 5px;
+            margin-bottom: 100px;
+            overflow-x: auto;
+            &::-webkit-scrollbar {
+                width: 10px; /* Width for vertical scrollbars */
+                height: 10px; /* Height for horizontal scrollbars */
+            }
+            .back-tune-app{
+                position: fixed;
+                font-size: 24px;
+                background-color: rgba(0, 0, 0, 0.653);
+                width: 40px;
+                height: 40px;
+                border-radius: 10px;
+                border: none;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #fff;
+                bottom: 70px;
+                left: 193px;
+                z-index: 11;
+                cursor: pointer;
+                &:hover{
+                    background-color: rgba(0, 0, 0, 0.824);
+                }
+            }
+            .audios{
+                position: relative;
+                margin-top: 10px;
+                backdrop-filter: blur(4px);
+                border-radius: 10px;
+                box-shadow: 0px 0px 3px 1px rgba(255, 255, 255, 0.432); 
+                &:hover{
+                    box-shadow: 0px 0px 5px 3px orange;
+                }
+                
+            }
+            
+            
+            // audio::-webkit-media-controls-play-button,
+            audio::-webkit-media-controls-panel {
+                background-image: linear-gradient(to right,#fcb045 , #fd1d1d , #833ab4);
+                // color: red;
+            }
+            .title-audio{
+                position: absolute;
+                top: 10px;
+                left: 5px;
+                z-index: 2;
+                width: 200px;
+                color: orange;
+                font-weight: 600;
+                font-size: 12px;
+            }
+            .audio{
+                margin-top: 30px;
+                margin-left: 5px;
+                width: 200px;
+                height: 50px;
+            }
+        }
+        .app-time{
+            position: absolute;
+            z-index: 1000;
+            font-size: 14px;
+            font-weight: bold;
+            color: #fff;
+            top: 5px;
+            left: 14px;
+        }
+        img{
+            width: 30px;
+        }
+        .slide-1{
+            position: absolute;
+            top: 45px;
+            width: 100%;
+            transition: .7s;
+            left: 0;
+        }
+        .slide-1:nth-child(2){
+            left: 300px !important;
+        }
+
+        .slide-1 .icon{
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            cursor: pointer;
+            transition: .8s;
+        }
+        .slide-1 .icon button{
+            height: 40px;
+            cursor: pointer;
+            width: 40px;
+            font-size: 25px;
+            transition: .8s;
+            border: 0;
+            line-height: 20px;
+            border-radius: 10px;
+        }
+
+        .slide-1 .icon label{
+            font-size: 8px;
+            margin-top: 2px;
+            color: #fff;
+        }
+
+        .applications{
+            position: absolute;
+            left: 0;
+            top: 0;
+            transition: .7s;
+            height: 100%;
+            width: 100%;
+            display: inline-flex;
+        }
+        .icon-sect{
+            width: 100%;
+            display: flex;
+            margin-bottom: 20px;
+            justify-content: space-around;
+            .icon{
+                transition: 0.3s;
+            }
+            .icon:hover button{
+                transform: scale(0.9);
+            }
+            .icon:hover button{
+                box-shadow: 0px 0px 5px 1px rgb(176, 178, 174);
+            }
+            
+            .camera{
+                background-color: #b2b1c3;
+            }
+            .facetime{
+                background-color: rgb(109, 236, 67);
+            }
+            .mail{
+                color: #fff;
+                background-image: linear-gradient(#2452ed , #3e93d7);
+            }
+            .ibook{
+                background-color: #d69c02;
+                color: #fff;
+            }
+            .itunestore{
+                color: #fff;
+                background-image: linear-gradient(#c000cb , #9d0df9);
+            }
+            .apple-tv{
+                background-color: #111713;
+            }
+            .home{
+                background-color: #fff;
+            }
+            .health{
+                background-color: #fff;
+            }
+            .phone-log{
+                background-color: #9ff327 !important;
+            }
+            .music{
+                background-color: #c93b44;
+            }
+            .message{
+                background-color: #adec43;
+            }
+            .appstore{
+                background-image: linear-gradient(#4a80d2 , #254fb8);
+            }
+            .facebook-app{
+                background-image: linear-gradient(#4a80d2 , #254fb8);
+            }
+            .xbox-app{
+                background-color: green;
+            }
+            .playstation-app{
+                background-image: linear-gradient(blue , #000);
+            }
+            .bi-spotify{
+                background-color: rgb(14, 13, 13);
+            }
+            .messenger-app{
+                background-color: rgb(47, 47, 253);
+                position: relative;
+            }
+            .messenger-app::before{
+                content: '5';
+                height: 15px;
+                width: 15px;
+                font-family: 'Inter' , sans-serif;
+                border-radius: 50%;
+                background-color: rgb(226, 4, 4);
+                color: #fff;
+                font-weight: bolder;
+                position: absolute;
+                top: -5px;
+                right: -5px;
+                line-height:15px;
+                font-size: 8px;
+            }
+            .instagram-app{
+                background-image: linear-gradient(to right,#fcb045 , #fd1d1d , #833ab4);
+            }
+            .twitter-app{
+                background-image: linear-gradient(#4083e9 , #376bee);
+            }
+            .whatsapp-app{
+                background-color: rgb(4, 180, 4);
+            }
+            .pinterest-app{
+                background-color: rgb(253, 36, 36);
+            }
+            .github-app{
+                background-color: #fff;
+            }
+            .youtube-app{
+                background-color: #fff;
+            }
+            .snapchat-app{
+                background-color: rgb(214, 214, 25);
+            }
+            .translator-app{
+                background-color: #2452ed;
+            }
+            .calculator-app{
+                background-color: #9ff327;
+            }
+            .alarm-app{
+                background-color: #fff;
+            }
+            
+        }
+        
+        .indicators{
+            display: flex;
+            position: absolute;
+            bottom: 80px;
+            height: 10px;
+            width: 30px;
+            left: 50%;
+            text-align: center;
+            justify-content: space-around;
+            align-items: center;
+            transform: translateX(-50%);
+            span{
+                height: 6px;
+                width: 6px;
+                cursor: pointer;
+                border: 1px solid #fff;
+                border-radius: 50%;
+                
+            }
+            span.active-screen{
+                background-color: #fff;
+            }
+            
+        }
+        .active-slide{
+            transition: .7s;
+            transform: translateX(-300px);
+        }
+        .animation-lock-screen{
+            height: 0;
+            transition: .8s;
+            overflow: hidden;
+        }
+        .bottom-navigation{
+            position: absolute;
+            bottom: 10px;
+            width: 220px;
+            height: fit-content;
+            right: 0px;
+            margin: 10px;
+            border-radius: 13px;
+            padding: 6px 6px;
+            display: flex;
+            justify-content: space-around;
+            background-color: rgba(255, 255, 255, 0.244);
+            .bottom-app{
+                width: fit-content;
+                line-height: 40px;
+                cursor: pointer;
+                height: 40px;
+                width: 40px;
+                text-align: center;
+                border-radius: 10px;
+                transition: 0.3s;
+                font-size: 26px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .bottom-app.music{
+                background-color:#c93b44;
+            }
+            .message{
+                background-color: #adec43;
+            }
+            .phone-logo{
+                background-color: #9ff327 !important;
+            }
+            .appstore{
+                background-image: linear-gradient(#4a80d2 , #254fb8);
+            }
+            .bottom-app:hover{
+                transform: scale(0.9);
+                box-shadow: 0px 0px 5px 1px rgb(176, 178, 174);
+            }
+        }
+    }
+    .application-menu.active{
+        transform: scale(1);
+        visibility: visible;
+    }
+}
+
+.nav{
+    position: absolute;
+    top: 5px;
+    width: 100%;
+    height: 30px;
+    left: 0;
+    z-index: 101;
+    display: flex;
+    justify-content: space-between;
+    .right{
+        padding-right: 15px;
+        img{
+            width: 14px;
+        }
+    }
+}
